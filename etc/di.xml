@@ -3,10 +3,10 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="moduleCreator" xsi:type="object">Vishal\ModuleCreator\Console\CreateModule</item>
+                <item name="moduleCreator" xsi:type="object">VishalMehta\ModuleCreator\Console\CreateModule</item>
             </argument>
             <argument name="commands" xsi:type="array">
-                <item name="moduleCreatorShell" xsi:type="object">Vishal\ModuleCreator\Console\ModuleCreator</item>
+                <item name="moduleCreatorShell" xsi:type="object">VishalMehta\ModuleCreator\Console\ModuleCreator</item>
             </argument>
         </arguments>
     </type>

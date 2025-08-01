@@ -1,8 +1,8 @@
 <?php
 
-namespace Vishal\ModuleCreator\Console;
+namespace VishalMehta\ModuleCreator\Console;
 
-use Vishal\ModuleCreator\Helper\Data as ModuleCreatorHelper;
+use VishalMehta\ModuleCreator\Helper\Data as ModuleCreatorHelper;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Filesystem;
 use Symfony\Component\Console\Command\Command;

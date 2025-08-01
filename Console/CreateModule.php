@@ -1,6 +1,6 @@
 <?php
 
-namespace Vishal\ModuleCreator\Console;
+namespace VishalMehta\ModuleCreator\Console;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\ValidatorException;
@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Magento\Framework\Filesystem;
-use Vishal\ModuleCreator\Helper\Data as ModuleCreatorHelper;
+use VishalMehta\ModuleCreator\Helper\Data as ModuleCreatorHelper;
 use Magento\Framework\App\Filesystem\DirectoryList;
 
 /**

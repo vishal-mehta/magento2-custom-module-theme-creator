@@ -1,6 +1,6 @@
 <?php
 
-namespace Vishal\ModuleCreator\Helper;
+namespace VishalMehta\ModuleCreator\Helper;
 
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\App\Helper\AbstractHelper;

@@ -2,4 +2,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Vishal_ModuleCreator', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'VishalMehta_ModuleCreator', __DIR__);
