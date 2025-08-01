@@ -2,7 +2,7 @@
   "name": "vishalmehta/module-creator",
   "description": "Magento 2 Module and Theme Generator",
   "type": "magento2-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "proprietary",
   "authors": [
     {
@@ -11,7 +11,11 @@
       "role": "Technical Support"
     }
   ],
-  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.3|^7.4|^8.0|^8.1|^8.2|^8.3"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "autoload": {
     "files": [
       "registration.php"
