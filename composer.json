@@ -1,0 +1,22 @@
+{
+  "name": "vishal/module-creator",
+  "description": "Magento 2 Module and Theme Generator",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Vishal",
+      "email": "tovishalmca@gmail.com",
+      "role": "Technical Support"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Vishal\\ModuleCreator\\": ""
+    }
+  }
+}
