@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="[module]" resource="default" engine="innodb" comment="[Module]">
+        <column xsi:type="smallint" name="[module]_id" unsigned="false" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="[Module] Title"/>
+        <column xsi:type="varchar" name="url_key" nullable="false" length="255" comment="[Module] URl key"/>
+        <column xsi:type="varchar" name="meta_title" nullable="false" length="255" comment="[Module] Meta Title"/>
+        <column xsi:type="text" name="meta_keywords" nullable="false" comment="[Module] Meta Keywords"/>
+        <column xsi:type="text" name="meta_description" nullable="false" comment="[Module] Meta Description"/>
+        <column xsi:type="text" name="content" nullable="false" comment="[Module] Content"/>
+        <column xsi:type="varchar" name="image" nullable="false" length="255" comment="[Module] Image"/>
+        <column xsi:type="smallint" name="is_active" unsigned="false" nullable="false" identity="false"
+                default="1" comment="Is [Module] Active"/>
+        <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="[Module] Creation Time"/>
+        <column xsi:type="timestamp" name="update_time" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="[Module] Modification Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="[module]_id"/>
+        </constraint>
+        <index referenceId="[MODULE]_TITLE" indexType="fulltext">
+            <column name="title"/>
+        </index>
+    </table>
+    <table name="[module]_store" resource="default" engine="innodb" comment="[Module] To Store Linkage Table">
+        <column xsi:type="smallint" name="[module]_id" unsigned="false" nullable="false" identity="false"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false" identity="false"
+                comment="Store ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="[module]_id"/>
+            <column name="store_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="[MODULE]_STORE_ID_[MODULE]_ID" table="[module]_store"
+                    column="[module]_id" referenceTable="[module]" referenceColumn="[module]_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="[MODULE]_STORE_STORE_ID_STORE_STORE_ID" table="[module]_store"
+                    column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE"/>
+        <index referenceId="[MODULE]_STORE_STORE_ID" indexType="btree">
+            <column name="store_id"/>
+        </index>
+    </table>
+</schema>

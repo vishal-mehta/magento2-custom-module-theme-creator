@@ -1,0 +1,33 @@
+<?php
+/**
+ * @var \<Namespace>\<Module>\Block\<Module> $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<?php $_<module> = $block->getCollection(); ?>
+<?php if ($_<module>->getSize()): ?>
+    <div class="<module>_list_view">
+        <?php foreach ($_<module> as $<module>Item): ?>
+            <div id="item_<?= /* @noEscape */ $<module>Item->getId() ?>" class="<module>_list_item">
+                <h2>
+                    <a href="<?= /* @noEscape */ $block->getItemUrl($<module>Item) ?>">
+                        <?= $escaper->escapeHtml($<module>Item->getTitle()) ?>
+                    </a>
+                </h2>
+                <a href="<?= $escaper->escapeUrl($block->getItemUrl($<module>Item)) ?>">
+                    <?php if ($imageUrl = $block->getImageUrl($<module>Item, 150)): ?>
+                    <img src="<?= $escaper->escapeUrl($imageUrl) ?>"
+                         alt="<?= $escaper->escapeHtml($<module>Item->getTitle()) ?>" />
+                    <?php endif; ?>
+                </a>
+                <div class="<module>_item_subtitle">
+                    <?= $escaper->escapeHtml(__('Published: ')) ?>
+                    <?= /* @noEscape */ $block->formatDate($<module>Item->getCreationTime()) ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?= $block->getPagerHtml() ?>
+<?php else: ?>
+    <div class="message info empty"><span><?= $escaper->escapeHtml(__('You have no <Module>.')); ?></span></div>
+<?php endif ?>

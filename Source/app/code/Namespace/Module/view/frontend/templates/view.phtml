@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var \<Namespace>\<Module>\Block\View $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<?php $_<module>Item = $block->get<Module>(); ?>
+
+<div class="<module>_item_view">
+    <?php if ($imageUrl = $block->getImageUrl($_<module>Item, 400)): ?>
+       <p><img src="<?= $escaper->escapeUrl($imageUrl) ?>"
+               alt="<?= $escaper->escapeHtml($_<module>Item->getTitle()) ?>" /></p>
+    <?php endif; ?>
+
+    <div class="<module>_item_subtitle">
+        <?= $escaper->escapeHtml(__('Published: ')) ?>
+        <?= /* @noEscape */ $block->formatDate($_<module>Item->getPublishedAt()) ?>
+    </div>
+
+    <div class="<module>_item_content"><?= /* @noEscape */ $_<module>Item->getContent() ?></div>
+
+    <div class="pager">
+        <a href="<?= $escaper->escapeUrl($block->getBackUrl()) ?>">
+            <?= $escaper->escapeHtml(__('Return to list')) ?>
+        </a>
+    </div>
+</div>

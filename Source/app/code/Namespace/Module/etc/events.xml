@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="[module]_prepare_save">
+        <observer name="validate_[module]" instance="[Namespace]\[Module]\Observer\[Module]ValidatorObserver" />
+    </event>
+</config>
